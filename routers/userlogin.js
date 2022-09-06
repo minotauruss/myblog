@@ -1,14 +1,14 @@
 const express = require("express");
 const User = require("../models/users.js");
 const bcrypt = require("bcrypt");
-const router = express.Router();
+const routerlogin = express.Router();
 const jwt = require("jsonwebtoken")
 
 
 
 
 
-router.post("/",async (req,res)=>{
+routerlogin.post("/",async (req,res)=>{
    
     const{email,password} = req.body
     const user = await User.findOne({email,password}).lean()
@@ -35,4 +35,4 @@ if(await bcrypt.compare(password,user.password)){
 
 
 
-module.exports=router;
+module.exports=routerlogin;

@@ -5,6 +5,7 @@ require("dotenv").config();
 const cors = require ("cors");
 const postRouter = require("./routers/posts.js")
 const userRouter = require("./routers/users.js")
+const loginRouter = require("./routers/userlogin.js")
 
 const app = express ();
 
@@ -13,6 +14,7 @@ app.use(bodyParser.json());
 
 app.use("/posts",postRouter);
 app.use("/users",userRouter);
+app.use("/login",loginRouter);
 
 app.get("/", (req, res)=>{
     res.json({

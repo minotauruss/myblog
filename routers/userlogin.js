@@ -7,23 +7,8 @@ const jwt = require("jsonwebtoken")
 
 
 
-router.post("/",async (req,res)=>{
-    res.send("yeni bir user yaratıldı")
-    const{email,password} = req.body
-    try {
-       const response =  await User.create({
-            email,
-            password
-        })
-        console.log(response)
-    } catch (error) {
-        console.log(error)
-        return res.json({status: "error"})
-    }
-    
-});
 
-router.post("/login",async (req,res)=>{
+router.post("/",async (req,res)=>{
     res.send("yeni bir user yaratıldı")
     const{email,password} = req.body
     const user = await User.findOne({email,password}).lean()

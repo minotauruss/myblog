@@ -9,7 +9,7 @@ const jwt = require("jsonwebtoken")
 
 
 router.post("/",async (req,res)=>{
-    res.send("yeni bir user yaratıldı")
+   
     const{email,password} = req.body
     const user = await User.findOne({email,password}).lean()
 

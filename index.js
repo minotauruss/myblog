@@ -3,11 +3,14 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const cors = require ("cors");
+const postRouter = require("./routers/posts.js")
 
 const app = express ();
 
 app.use(cors());
 app.use(bodyParser.json());
+
+app.use("/posts",postRouter);
 
 app.get("/", (req, res)=>{
     res.json({

@@ -24,7 +24,7 @@ router.get("/:id",(req,res)=>{
 });
 
 
-router.post("/add",(req,res)=>{
+router.post("/",(req,res)=>{
     res.send("yeni bir post yaratıldı")
     const postServices= new Post({
         title:req.body.title,

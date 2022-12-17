@@ -13,14 +13,11 @@ routerlogin.post("/",async (req,res)=>{
     const{email,password} = req.body
     const user = await User.findOne({email,password}).lean()
 
-
-
-
-    const token = jwt.sign({
-        id:user._id,
-        email:user.email,},
-        "deneme")
-    return res.send(token)
+  const token = jwt.sign({
+    id:user._id,
+    email:user.email,},
+    "deneme")
+return res.send(token)
   
     
 });

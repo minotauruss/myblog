@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 app.use("/posts",postRouter);
 app.use("/users",userRouter);
 app.use("/login",loginRouter);
+app.use("/twitter",loginRouter);
 
 app.get("/", (req, res)=>{
     res.json({

@@ -27,10 +27,17 @@ router.get("/:id",(req,res)=>{
 router.post("/",(req,res)=>{
     res.send("yeni bir post yaratıldı")
     const postServices= new Post({
-        title:req.body.title,
-        subtitle:req.body.subtitle,
-        image : req.body.image,
-        tag : req.body.tag,
+       username:req.body.username,
+       tweet:req.body.tweet,
+        geo : req.body.geo,
+        language : req.body.language,
+        _id:req.body._id,
+        date:req.body.date,
+        name:req.body.name,
+        userId : req.body.user_id,
+        mentions:req.body.mentions,
+        hashtags:req.body.hashtags,
+
     });
     postServices.save();
 });

@@ -1,10 +1,17 @@
 const mongoose = require("mongoose");
 
 const postShcema = mongoose.Schema({
-    title: String,
-    subtitle : String,
-    image : String,
-    tag : Array,
+    username: String,
+    _id:String,
+    date:String,
+    name:String,
+    userId : String,
+    mentions:Array,
+    hashtags:Array,
+    geo:String,
+    tweet : String,
+    geo : String,
+    language : String,
     creatAt:{
         type: Date,
         default : new Date(),
